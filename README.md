@@ -2,6 +2,8 @@
 
 You can find the initial python file and the climate.db file here. The database follows the below schema:
 
+I have added some dummy data via Pandas and a CSV file for testing.
+
 
 #### Table: ClimateData
 | Year      | CO2 | Temperature
