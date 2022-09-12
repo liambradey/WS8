@@ -1,5 +1,7 @@
 import matplotlib.pyplot as plt
-        
+import pandas as pd
+
+climate = pd.read_csv("climate.csv")
 years = []
 co2 = []
 temp = []
