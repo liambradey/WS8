@@ -14,7 +14,7 @@ plt.ylabel("[CO2]")
 plt.xlabel("Year (decade)") 
 
 plt.subplot(2, 1, 2)
-plt.plot(years, temp, 'r*-') 
+plot(years, temp, 'r*-') 
 plt.ylabel("Temp (C)") 
 plt.xlabel("Year (decade)") 
 plt.show() 
