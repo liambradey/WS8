@@ -1,18 +1,11 @@
-import sqlite3
 import matplotlib.pyplot as plt
-        
-years = []
-co2 = []
-temp = []
+import pandas as pd
 
-connection = sqlite3.connect("climate.db")
-cursor = connection.cursor()
-cursor.execute("SELECT * FROM ClimateData")
+climate = pd.read_csv("climate.csv")
+years = climate['Year'].to_numpy()
+co2 = climate['CO2'].to_numpy()
+temp = climate['Temperature'].to_numpy()
 
-for row in cursor.fetchall():
-	years.append(row[0])
-	co2.append(row[1])
-	temp.append(row[2])
 
 plt.subplot(2, 1, 1)
 plt.plot(years, co2, 'b--') 
@@ -21,5 +14,10 @@ plt.ylabel("[CO2]")
 plt.xlabel("Year (decade)") 
 plt.show()
 
-
+plt.subplot(2, 1, 2)
+plt.plot(years, temp, 'r*-') 
+plt.ylabel("Temp (C)") 
+plt.xlabel("Year (decade)") 
+plt.show() 
+plt.savefig("co2_temp.png") 
 
